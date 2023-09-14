@@ -1,4 +1,4 @@
-package com.example.microservices.domain;
+package com.example.microservices.domain_jpa;
 
 import javax.persistence.*;
 import java.util.Objects;

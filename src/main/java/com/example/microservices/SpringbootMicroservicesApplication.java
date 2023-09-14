@@ -1,7 +1,7 @@
 package com.example.microservices;
 
-import com.example.microservices.domain.Difficulty;
-import com.example.microservices.domain.Region;
+import com.example.microservices.domain_jpa.Difficulty;
+import com.example.microservices.domain_jpa.Region;
 import com.example.microservices.service.TourPackageService;
 import com.example.microservices.service.TourService;
 import com.fasterxml.jackson.core.type.TypeReference;

@@ -1,11 +1,11 @@
 package com.example.microservices.service;
 
-import com.example.microservices.domain.Difficulty;
-import com.example.microservices.domain.Region;
-import com.example.microservices.domain.Tour;
-import com.example.microservices.domain.TourPackage;
-import com.example.microservices.repo.TourPackageRepository;
-import com.example.microservices.repo.TourRepository;
+import com.example.microservices.domain_jpa.Difficulty;
+import com.example.microservices.domain_jpa.Region;
+import com.example.microservices.domain_jpa.Tour;
+import com.example.microservices.domain_jpa.TourPackage;
+import com.example.microservices.repo_jpa.TourPackageRepository;
+import com.example.microservices.repo_jpa.TourRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

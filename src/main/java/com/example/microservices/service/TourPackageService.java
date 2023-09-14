@@ -1,7 +1,7 @@
 package com.example.microservices.service;
 
-import com.example.microservices.domain.TourPackage;
-import com.example.microservices.repo.TourPackageRepository;
+import com.example.microservices.domain_jpa.TourPackage;
+import com.example.microservices.repo_jpa.TourPackageRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -1,7 +1,7 @@
 
 
 ### Building application
-1. mvn install : to build the jar file (packaging type is jar in pom.xml)
+1. mvn clean install : to build the jar file (packaging type is jar in pom.xml)
 2. above command build /target folder with jar file named using artifact and version name mentioned in pom.xml
 3. java -jar target/<jar-name>.jar : run the jar file
 4. run - http://localhost:8080 on browser to see if the application is live
@@ -28,10 +28,16 @@ when your application is launched.
 
 
 ### H2 database
+H2 is a lightweight, open-source, in-memory and disk-based relational database management system (RDBMS) written in Java.
 1. JPA performs db queries on H2 repo.
 2. we spawn H2 by mentioning its dependency on pom.xml
 3. if we explicitly don't mention db details in application.properties
-    then default config is used by JPA
+   then default config is used by JPA
+   default config-
+      spring.datasource.url=jdbc:h2:mem:testdb
+      spring.datasource.username=sa
+      spring.datasource.password=password
+      spring.datasource.driverClassName=org.h2.Driver
 
 ### Rest Repository
 Spring Data REST is a part of the Spring Data project that simplifies the creation of RESTful APIs for your data models.
@@ -39,7 +45,14 @@ It builds on top of Spring Data repositories and automatically exposes them as R
 additional code. Spring Data REST provides a quick way to create CRUD (Create, Read, Update, Delete) endpoints for your
 data models without having to write explicit controller code.
 1. http://localhost:8080/tourPackages/BC : out-of-the-box GET api for TourPackage Entity (annotated with @Entity)
-2. POST http://localhost:8080/tourPackages 
+2. POST http://localhost:8080/tourPackages
+3. @RestResource: Annotates methods to customize their behavior when exposed as REST endpoints by Spring Data REST,
+   allowing you to control how they are accessed and displayed.
+
+### Paging And Sorting
+PagingAndSortingRepository<Tour, String> is a generic interface provided by Spring Data that extends the
+CrudRepository<T, ID> interface. It's used for working with data access in Spring applications, particularly when
+dealing with paginated and sorted queries.
 
 
 ### Spring Data MongoDB
@@ -51,6 +64,12 @@ data, high write loads, and horizontal scalability.
 1. Clas is annotated with @Document instead of @Entity
 2. @Indexed - to increase search performance
 3. @DBRef - refers to another Document within a Document
+
+1. we use de.flapdoodle.embed's in-memory mongo db
+2. default config-
+   spring.data.mongodb.host=localhost
+   spring.data.mongodb.port=27017
+   spring.data.mongodb.database=mydb
 
 
 
